@@ -20,8 +20,8 @@ export class HomePage {
 
 
 
-onRecordAudio() {
-  this.media = new Media('henning2.m4a');
+recordAudio() {
+  this.media = new Media('voicerecording.m4a');
 
     // Record MPEG compressed audio, single channel at 16kHz
     const options = {
@@ -34,11 +34,11 @@ onRecordAudio() {
   this.media.startRecordWithCompression(options);
   this.recording = true;
 }
-onStopRecordAudio() {
+stopRecordAndReplayAudio() {
   this.media.stopRecord();
   this.media.release();
   this.recording = false;
-  this.media = new Media('henning2.m4a');
+  this.media = new Media('voicerecording.m4a');
   this.media.setVolume(1.0);
   this.media.play();
   this.media.setVolume(1.0);

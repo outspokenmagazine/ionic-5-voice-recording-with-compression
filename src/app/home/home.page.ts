@@ -11,8 +11,6 @@ export class HomePage {
   recording = false;
   media: any = '';
 
-
-
   constructor(
   ) {
 
@@ -22,7 +20,6 @@ export class HomePage {
 
 recordAudio() {
   this.media = new Media('voicerecording.m4a');
-
     // Record MPEG compressed audio, single channel at 16kHz
     const options = {
       // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -34,6 +31,8 @@ recordAudio() {
   this.media.startRecordWithCompression(options);
   this.recording = true;
 }
+
+
 stopRecordAndReplayAudio() {
   this.media.stopRecord();
   this.media.release();

@@ -1,0 +1,49 @@
+import { Component } from '@angular/core';
+// eslint-disable-next-line @typescript-eslint/naming-convention
+declare let Media: any; // stops errors w/ cordova-plugin-media-with-compression types
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+  recording = false;
+  media: any = '';
+
+
+
+  constructor(
+  ) {
+
+  }
+
+
+
+onRecordAudio() {
+  this.media = new Media('henning2.m4a');
+
+    // Record MPEG compressed audio, single channel at 16kHz
+    const options = {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      SampleRate: 441000,
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      NumberOfChannels: 2
+  };
+
+  this.media.startRecordWithCompression(options);
+  this.recording = true;
+}
+onStopRecordAudio() {
+  this.media.stopRecord();
+  this.media.release();
+  this.recording = false;
+  this.media = new Media('henning2.m4a');
+  this.media.setVolume(1.0);
+  this.media.play();
+  this.media.setVolume(1.0);
+
+}
+
+
+}

@@ -1,0 +1,8 @@
+{
+  "name": "MohamedAljahani",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,6 +1,6 @@
 {
 	"appId": "io.ionic.starter",
-	"appName": "MohamedAljahani",
+	"appName": "Ionic Voice Recording with Compression",
 	"webDir": "www",
 	"bundledWebRuntime": false,
 	"cordova": {
